@@ -1,0 +1,23 @@
+> python -m coverage run --branch -m pytest test_fuel_station.py CodeCoverageTest_fuel_station.py BranchCoverageTest_fuel_station.py
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.0.2, pluggy-1.6.0
+rootdir: D:\Sem-5\SE\Deepti\Lab-6\repo\Lab 6
+plugins: anyio-4.14.2, hypothesis-6.168.5, langsmith-0.14.12, locust-2.43.3, asyncio-1.4.1
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 44 items
+
+test_fuel_station.py ..                                                  [  4%]
+CodeCoverageTest_fuel_station.py ..............                          [ 36%]
+BranchCoverageTest_fuel_station.py ............................          [100%]
+
+============================= 44 passed in 0.34s ==============================
+
+> python -m coverage report -m
+Name                                 Stmts   Miss Branch BrPart  Cover   Missing
+--------------------------------------------------------------------------------
+BranchCoverageTest_fuel_station.py      57      0      0      0   100%
+CodeCoverageTest_fuel_station.py        32      0      0      0   100%
+fuel_station.py                         37      0     26      0   100%
+test_fuel_station.py                     6      0      0      0   100%
+--------------------------------------------------------------------------------
+TOTAL                                  132      0     26      0   100%
