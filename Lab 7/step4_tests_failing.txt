@@ -1,0 +1,454 @@
+$ python -m pytest test_fuel_station.py --tb=short   (against BUGGY fuel_station.py)
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.0.2, pluggy-1.6.0
+rootdir: D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7
+plugins: anyio-4.14.2, hypothesis-6.168.5, langsmith-0.14.12, locust-2.43.3, asyncio-1.4.1
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 15 items
+
+test_fuel_station.py FFF.FFF.FFFF.FF                                     [100%]
+
+================================== FAILURES ===================================
+________________________ test_parse_purchase_no_crash _________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 14, in test_parse_purchase_no_crash
+  |     def test_parse_purchase_no_crash(s):
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 15, in test_parse_purchase_no_crash
+    |     parse_purchase(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 3, in parse_purchase
+    |     return grade.strip().title(), float(litres)
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_parse_purchase_no_crash(
+    |     s=':',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 15, in test_parse_purchase_no_crash
+    |     parse_purchase(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 2, in parse_purchase
+    |     grade, litres = text.split(':')
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_parse_purchase_no_crash(
+    |     s='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 15, in test_parse_purchase_no_crash
+    |     parse_purchase(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 2, in parse_purchase
+    |     grade, litres = text.split(':')
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_parse_purchase_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+____________________ test_parse_purchase_any_type_no_crash ____________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 19, in test_parse_purchase_any_type_no_crash
+  |     def test_parse_purchase_any_type_no_crash(s):
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 4 distinct failures. (4 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 20, in test_parse_purchase_any_type_no_crash
+    |     parse_purchase(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 2, in parse_purchase
+    |     grade, litres = text.split(':')
+    | TypeError: a bytes-like object is required, not 'str'
+    | Failing test case: test_parse_purchase_any_type_no_crash(
+    |     s=b'',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 20, in test_parse_purchase_any_type_no_crash
+    |     parse_purchase(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 3, in parse_purchase
+    |     return grade.strip().title(), float(litres)
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_parse_purchase_any_type_no_crash(
+    |     s=':',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 20, in test_parse_purchase_any_type_no_crash
+    |     parse_purchase(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 2, in parse_purchase
+    |     grade, litres = text.split(':')
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_parse_purchase_any_type_no_crash(
+    |     s='',
+    | )
+    +---------------- 4 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 20, in test_parse_purchase_any_type_no_crash
+    |     parse_purchase(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 2, in parse_purchase
+    |     grade, litres = text.split(':')
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_parse_purchase_any_type_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+______________________ test_parse_purchase_return_shape _______________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 24, in test_parse_purchase_return_shape
+  |     def test_parse_purchase_return_shape(s):
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 25, in test_parse_purchase_return_shape
+    |     grade, litres = parse_purchase(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 3, in parse_purchase
+    |     return grade.strip().title(), float(litres)
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_parse_purchase_return_shape(
+    |     s=':',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 25, in test_parse_purchase_return_shape
+    |     grade, litres = parse_purchase(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 2, in parse_purchase
+    |     grade, litres = text.split(':')
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_parse_purchase_return_shape(
+    |     s='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 25, in test_parse_purchase_return_shape
+    |     grade, litres = parse_purchase(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 2, in parse_purchase
+    |     grade, litres = text.split(':')
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_parse_purchase_return_shape(
+    |     s=None,
+    | )
+    +------------------------------------
+________________________ test_volume_average_no_crash _________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 41, in test_volume_average_no_crash
+  |     def test_volume_average_no_crash(s):
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 42, in test_volume_average_no_crash
+    |     volume_average(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 6, in volume_average
+    |     values = [int(r) for r in volumes_csv.split(',')]
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 6, in <listcomp>
+    |     values = [int(r) for r in volumes_csv.split(',')]
+    | ValueError: invalid literal for int() with base 10: ''
+    | Failing test case: test_volume_average_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 42, in test_volume_average_no_crash
+    |     volume_average(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 6, in volume_average
+    |     values = [int(r) for r in volumes_csv.split(',')]
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_volume_average_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+____________________ test_volume_average_any_type_no_crash ____________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 46, in test_volume_average_any_type_no_crash
+  |     def test_volume_average_any_type_no_crash(s):
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 47, in test_volume_average_any_type_no_crash
+    |     volume_average(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 6, in volume_average
+    |     values = [int(r) for r in volumes_csv.split(',')]
+    | TypeError: a bytes-like object is required, not 'str'
+    | Failing test case: test_volume_average_any_type_no_crash(
+    |     s=b'',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 47, in test_volume_average_any_type_no_crash
+    |     volume_average(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 6, in volume_average
+    |     values = [int(r) for r in volumes_csv.split(',')]
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 6, in <listcomp>
+    |     values = [int(r) for r in volumes_csv.split(',')]
+    | ValueError: invalid literal for int() with base 10: ''
+    | Failing test case: test_volume_average_any_type_no_crash(
+    |     s='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 47, in test_volume_average_any_type_no_crash
+    |     volume_average(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 6, in volume_average
+    |     values = [int(r) for r in volumes_csv.split(',')]
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_volume_average_any_type_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+_______________________ test_volume_average_return_type _______________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 51, in test_volume_average_return_type
+  |     def test_volume_average_return_type(s):
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 52, in test_volume_average_return_type
+    |     r = volume_average(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 6, in volume_average
+    |     values = [int(r) for r in volumes_csv.split(',')]
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 6, in <listcomp>
+    |     values = [int(r) for r in volumes_csv.split(',')]
+    | ValueError: invalid literal for int() with base 10: ''
+    | Failing test case: test_volume_average_return_type(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 52, in test_volume_average_return_type
+    |     r = volume_average(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 6, in volume_average
+    |     values = [int(r) for r in volumes_csv.split(',')]
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_volume_average_return_type(
+    |     s=None,
+    | )
+    +------------------------------------
+__________________ test_volume_average_joined_text_no_crash ___________________
+test_fuel_station.py:64: in test_volume_average_joined_text_no_crash
+    def test_volume_average_joined_text_no_crash(parts):
+test_fuel_station.py:65: in test_volume_average_joined_text_no_crash
+    volume_average(",".join(parts))
+fuel_station.py:6: in volume_average
+    values = [int(r) for r in volumes_csv.split(',')]
+fuel_station.py:6: in <listcomp>
+    values = [int(r) for r in volumes_csv.split(',')]
+E   ValueError: invalid literal for int() with base 10: ''
+E   Failing test case: test_volume_average_joined_text_no_crash(
+E       parts=[],
+E   )
+_________________________ test_payable_bill_no_crash __________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 70, in test_payable_bill_no_crash
+  |     def test_payable_bill_no_crash(s):
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 71, in test_payable_bill_no_crash
+    |     payable_bill(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 11, in payable_bill
+    |     total = float(bill) * 1.18 - float(discount)
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_payable_bill_no_crash(
+    |     s='|',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 71, in test_payable_bill_no_crash
+    |     payable_bill(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 10, in payable_bill
+    |     bill, discount = text.split('|')
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_payable_bill_no_crash(
+    |     s='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 71, in test_payable_bill_no_crash
+    |     payable_bill(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 10, in payable_bill
+    |     bill, discount = text.split('|')
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_payable_bill_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+_____________________ test_payable_bill_any_type_no_crash _____________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 75, in test_payable_bill_any_type_no_crash
+  |     def test_payable_bill_any_type_no_crash(s):
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 4 distinct failures. (4 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 76, in test_payable_bill_any_type_no_crash
+    |     payable_bill(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 10, in payable_bill
+    |     bill, discount = text.split('|')
+    | TypeError: a bytes-like object is required, not 'str'
+    | Failing test case: test_payable_bill_any_type_no_crash(
+    |     s=b'',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 76, in test_payable_bill_any_type_no_crash
+    |     payable_bill(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 11, in payable_bill
+    |     total = float(bill) * 1.18 - float(discount)
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_payable_bill_any_type_no_crash(
+    |     s='|',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 76, in test_payable_bill_any_type_no_crash
+    |     payable_bill(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 10, in payable_bill
+    |     bill, discount = text.split('|')
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_payable_bill_any_type_no_crash(
+    |     s='',
+    | )
+    +---------------- 4 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 76, in test_payable_bill_any_type_no_crash
+    |     payable_bill(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 10, in payable_bill
+    |     bill, discount = text.split('|')
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_payable_bill_any_type_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+____________________ test_payable_bill_non_negative_finite ____________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 80, in test_payable_bill_non_negative_finite
+  |     def test_payable_bill_non_negative_finite(s):
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 81, in test_payable_bill_non_negative_finite
+    |     r = payable_bill(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 11, in payable_bill
+    |     total = float(bill) * 1.18 - float(discount)
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_payable_bill_non_negative_finite(
+    |     s='|',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 81, in test_payable_bill_non_negative_finite
+    |     r = payable_bill(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 10, in payable_bill
+    |     bill, discount = text.split('|')
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_payable_bill_non_negative_finite(
+    |     s='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 81, in test_payable_bill_non_negative_finite
+    |     r = payable_bill(s)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 10, in payable_bill
+    |     bill, discount = text.split('|')
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_payable_bill_non_negative_finite(
+    |     s=None,
+    | )
+    +------------------------------------
+_________________ test_payable_bill_two_text_fields_no_crash __________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 92, in test_payable_bill_two_text_fields_no_crash
+  |     def test_payable_bill_two_text_fields_no_crash(a, b):
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 93, in test_payable_bill_two_text_fields_no_crash
+    |     payable_bill(f"{a}|{b}")
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 10, in payable_bill
+    |     bill, discount = text.split('|')
+    | ValueError: too many values to unpack (expected 2)
+    | Failing test case: test_payable_bill_two_text_fields_no_crash(
+    |     a='',
+    |     b='|',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 93, in test_payable_bill_two_text_fields_no_crash
+    |     payable_bill(f"{a}|{b}")
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 11, in payable_bill
+    |     total = float(bill) * 1.18 - float(discount)
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_payable_bill_two_text_fields_no_crash(
+    |     a='',
+    |     b='',
+    | )
+    +------------------------------------
+_____________________________ test_main_no_crash ______________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 98, in test_main_no_crash
+  |     st.text(alphabet=st.characters(blacklist_characters="\n\r"), max_size=30),
+  |   File "C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | exceptiongroup.ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 106, in test_main_no_crash
+    |     main()
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 17, in main
+    |     result = parse_purchase(user_input)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 3, in parse_purchase
+    |     return grade.strip().title(), float(litres)
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_main_no_crash(
+    |     # The test always failed when commented parts were varied together.
+    |     a=':',
+    |     b='',  # or any other generated value
+    |     c='',  # or any other generated value
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\test_fuel_station.py", line 106, in test_main_no_crash
+    |     main()
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 17, in main
+    |     result = parse_purchase(user_input)
+    |   File "D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7\fuel_station.py", line 2, in parse_purchase
+    |     grade, litres = text.split(':')
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_main_no_crash(
+    |     # The test always failed when commented parts were varied together.
+    |     a='',  # or any other generated value
+    |     b='',  # or any other generated value
+    |     c='',  # or any other generated value
+    | )
+    +------------------------------------
+=========================== short test summary info ===========================
+FAILED test_fuel_station.py::test_parse_purchase_no_crash - exceptiongroup.Ex...
+FAILED test_fuel_station.py::test_parse_purchase_any_type_no_crash - exceptio...
+FAILED test_fuel_station.py::test_parse_purchase_return_shape - exceptiongrou...
+FAILED test_fuel_station.py::test_volume_average_no_crash - exceptiongroup.Ex...
+FAILED test_fuel_station.py::test_volume_average_any_type_no_crash - exceptio...
+FAILED test_fuel_station.py::test_volume_average_return_type - exceptiongroup...
+FAILED test_fuel_station.py::test_volume_average_joined_text_no_crash - Value...
+FAILED test_fuel_station.py::test_payable_bill_no_crash - exceptiongroup.Exce...
+FAILED test_fuel_station.py::test_payable_bill_any_type_no_crash - exceptiong...
+FAILED test_fuel_station.py::test_payable_bill_non_negative_finite - exceptio...
+FAILED test_fuel_station.py::test_payable_bill_two_text_fields_no_crash - exc...
+FAILED test_fuel_station.py::test_main_no_crash - exceptiongroup.ExceptionGro...
+======================== 12 failed, 3 passed in 5.04s =========================

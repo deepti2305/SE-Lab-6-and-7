@@ -1,0 +1,81 @@
+=== Run 1: python -m pytest test_fuel_station.py -v ===
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\python.exe
+hypothesis profile 'default'
+rootdir: D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7
+plugins: anyio-4.14.2, hypothesis-6.168.5, langsmith-0.14.12, locust-2.43.3, asyncio-1.4.1
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 15 items
+
+test_fuel_station.py::test_parse_purchase_no_crash PASSED                [  6%]
+test_fuel_station.py::test_parse_purchase_any_type_no_crash PASSED       [ 13%]
+test_fuel_station.py::test_parse_purchase_return_shape PASSED            [ 20%]
+test_fuel_station.py::test_parse_purchase_valid_roundtrip PASSED         [ 26%]
+test_fuel_station.py::test_volume_average_no_crash PASSED                [ 33%]
+test_fuel_station.py::test_volume_average_any_type_no_crash PASSED       [ 40%]
+test_fuel_station.py::test_volume_average_return_type PASSED             [ 46%]
+test_fuel_station.py::test_volume_average_within_bounds PASSED           [ 53%]
+test_fuel_station.py::test_volume_average_joined_text_no_crash PASSED    [ 60%]
+test_fuel_station.py::test_payable_bill_no_crash PASSED                  [ 66%]
+test_fuel_station.py::test_payable_bill_any_type_no_crash PASSED         [ 73%]
+test_fuel_station.py::test_payable_bill_non_negative_finite PASSED       [ 80%]
+test_fuel_station.py::test_payable_bill_valid_formula PASSED             [ 86%]
+test_fuel_station.py::test_payable_bill_two_text_fields_no_crash PASSED  [ 93%]
+test_fuel_station.py::test_main_no_crash PASSED                          [100%]
+
+============================= 15 passed in 1.31s ==============================
+
+=== Run 2: python -m pytest test_fuel_station.py -v ===
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\python.exe
+hypothesis profile 'default'
+rootdir: D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7
+plugins: anyio-4.14.2, hypothesis-6.168.5, langsmith-0.14.12, locust-2.43.3, asyncio-1.4.1
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 15 items
+
+test_fuel_station.py::test_parse_purchase_no_crash PASSED                [  6%]
+test_fuel_station.py::test_parse_purchase_any_type_no_crash PASSED       [ 13%]
+test_fuel_station.py::test_parse_purchase_return_shape PASSED            [ 20%]
+test_fuel_station.py::test_parse_purchase_valid_roundtrip PASSED         [ 26%]
+test_fuel_station.py::test_volume_average_no_crash PASSED                [ 33%]
+test_fuel_station.py::test_volume_average_any_type_no_crash PASSED       [ 40%]
+test_fuel_station.py::test_volume_average_return_type PASSED             [ 46%]
+test_fuel_station.py::test_volume_average_within_bounds PASSED           [ 53%]
+test_fuel_station.py::test_volume_average_joined_text_no_crash PASSED    [ 60%]
+test_fuel_station.py::test_payable_bill_no_crash PASSED                  [ 66%]
+test_fuel_station.py::test_payable_bill_any_type_no_crash PASSED         [ 73%]
+test_fuel_station.py::test_payable_bill_non_negative_finite PASSED       [ 80%]
+test_fuel_station.py::test_payable_bill_valid_formula PASSED             [ 86%]
+test_fuel_station.py::test_payable_bill_two_text_fields_no_crash PASSED  [ 93%]
+test_fuel_station.py::test_main_no_crash PASSED                          [100%]
+
+============================= 15 passed in 1.36s ==============================
+
+=== Run 3: python -m pytest test_fuel_station.py -v ===
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\Adil Ahmed\AppData\Local\Programs\Python\Python310\python.exe
+hypothesis profile 'default'
+rootdir: D:\Sem-5\SE\Deepti\Lab-7\repo\Lab 7
+plugins: anyio-4.14.2, hypothesis-6.168.5, langsmith-0.14.12, locust-2.43.3, asyncio-1.4.1
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 15 items
+
+test_fuel_station.py::test_parse_purchase_no_crash PASSED                [  6%]
+test_fuel_station.py::test_parse_purchase_any_type_no_crash PASSED       [ 13%]
+test_fuel_station.py::test_parse_purchase_return_shape PASSED            [ 20%]
+test_fuel_station.py::test_parse_purchase_valid_roundtrip PASSED         [ 26%]
+test_fuel_station.py::test_volume_average_no_crash PASSED                [ 33%]
+test_fuel_station.py::test_volume_average_any_type_no_crash PASSED       [ 40%]
+test_fuel_station.py::test_volume_average_return_type PASSED             [ 46%]
+test_fuel_station.py::test_volume_average_within_bounds PASSED           [ 53%]
+test_fuel_station.py::test_volume_average_joined_text_no_crash PASSED    [ 60%]
+test_fuel_station.py::test_payable_bill_no_crash PASSED                  [ 66%]
+test_fuel_station.py::test_payable_bill_any_type_no_crash PASSED         [ 73%]
+test_fuel_station.py::test_payable_bill_non_negative_finite PASSED       [ 80%]
+test_fuel_station.py::test_payable_bill_valid_formula PASSED             [ 86%]
+test_fuel_station.py::test_payable_bill_two_text_fields_no_crash PASSED  [ 93%]
+test_fuel_station.py::test_main_no_crash PASSED                          [100%]
+
+============================= 15 passed in 1.28s ==============================
+
