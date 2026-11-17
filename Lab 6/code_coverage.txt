@@ -1,0 +1,21 @@
+> python -m coverage run  -m pytest test_fuel_station.py CodeCoverageTest_fuel_station.py
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.0.2, pluggy-1.6.0
+rootdir: D:\Sem-5\SE\Deepti\Lab-6\repo\Lab 6
+plugins: anyio-4.14.2, hypothesis-6.168.5, langsmith-0.14.12, locust-2.43.3, asyncio-1.4.1
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 16 items
+
+test_fuel_station.py ..                                                  [ 12%]
+CodeCoverageTest_fuel_station.py ..............                          [100%]
+
+============================= 16 passed in 0.27s ==============================
+
+> python -m coverage report -m
+Name                               Stmts   Miss  Cover   Missing
+----------------------------------------------------------------
+CodeCoverageTest_fuel_station.py      32      0   100%
+fuel_station.py                       37      0   100%
+test_fuel_station.py                   6      0   100%
+----------------------------------------------------------------
+TOTAL                                 75      0   100%
