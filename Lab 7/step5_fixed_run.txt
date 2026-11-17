@@ -1,0 +1,19 @@
+$ python fuel_station.py   (inputs: diesel:25 / 10,25,40 / 2500|100)
+==== Running parse_purchase ====
+Enter grade:litres (e.g. diesel:25): Grade and Litres: ('Diesel', 25.0)
+
+==== Running volume_average ====
+Enter pump volumes in litres as CSV (e.g. 10,25,40): Average Volume: 25
+
+==== Running payable_bill ====
+Enter bill|discount (e.g. 2500|100): Payable Bill: 2850.0
+
+$ python fuel_station.py   (previously crashing inputs: diesel / 10,abc / 2500)
+==== Running parse_purchase ====
+Enter grade:litres (e.g. diesel:25): Grade and Litres: ('', 0.0)
+
+==== Running volume_average ====
+Enter pump volumes in litres as CSV (e.g. 10,25,40): Average Volume: 10
+
+==== Running payable_bill ====
+Enter bill|discount (e.g. 2500|100): Payable Bill: 0.0
